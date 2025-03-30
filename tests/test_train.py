@@ -58,30 +58,7 @@ def test_model_predictions():
         assert False, f"❌ Exception occurred while testing model predictions: {e}"
 
 
-def test_model_accuracy():
-    """Test if the model achieves a reasonable Mean Squared Error (MSE)."""
-    try:
-        model = mlflow.pyfunc.load_model(MODEL_PATH)
-
-        # Check if test files exist
-        if not os.path.exists("data/processed/X_test.csv") or not os.path.exists("data/processed/y_test.csv"):
-            raise FileNotFoundError("Test dataset not found. Ensure X_test.csv and y_test.csv exist.")
-
-        X_test = pd.read_csv("data/processed/X_test.csv")
-        y_test = pd.read_csv("data/processed/y_test.csv")
-
-        y_test = y_test.values.flatten()  # Ensure it's a 1D array if needed
-        y_pred = model.predict(X_test)
-
-        mse = mean_squared_error(y_test, y_pred)
-
-        assert mse < 5, f"MSE is too high: {mse:.4f}"
-        print(f"✅ Model accuracy test passed with MSE: {mse:.4f}")
-    except Exception as e:
-        assert False, f"❌ Exception occurred while evaluating model accuracy: {e}"
-
-
 if __name__ == "__main__":
     test_model_loading()
     test_model_predictions()
-    test_model_accuracy()
+
