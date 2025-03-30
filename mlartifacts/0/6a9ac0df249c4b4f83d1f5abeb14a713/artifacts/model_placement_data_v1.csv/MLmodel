@@ -1,0 +1,32 @@
+artifact_path: model_placement_data_v1.csv
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.4
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 2.21.2
+model_size_bytes: 7295986
+model_uuid: 48b0b1a2eed1491f9f0e3e5277b077a2
+prompts: null
+run_id: 6a9ac0df249c4b4f83d1f5abeb14a713
+saved_input_example_info:
+  artifact_path: input_example.json
+  serving_input_path: serving_input_example.json
+  type: json_object
+signature:
+  inputs: '[{"type": "double", "name": "CGPA", "required": true}, {"type": "double",
+    "name": "Study_Hours", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-03-30 17:36:15.104160'
