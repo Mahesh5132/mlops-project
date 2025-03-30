@@ -1,0 +1,5 @@
+outs:
+- md5: 78116f550fccd1662c9fe4ed1f3b75ed
+  size: 15747
+  hash: md5
+  path: placement_data_v1.csv
