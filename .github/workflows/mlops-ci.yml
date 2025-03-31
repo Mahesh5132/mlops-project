@@ -26,6 +26,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt   
           pip install pytest
+          pip install -r <(grep -v 'pywin32' requirements.txt)
 
       - name: Run Pytest Tests
         run: |
