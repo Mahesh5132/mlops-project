@@ -2,11 +2,9 @@ name: MLOps CI Pipeline
 
 on:  
   push:  # Runs on every push to the repo
-    branches:
-      - main  # Adjust if using a different branch
+    branches: []  # Adjust if using a different branch
   pull_request:  # Runs on PRs to main branch
-    branches:
-      - main
+    branches: []
 
 jobs:
   test:
