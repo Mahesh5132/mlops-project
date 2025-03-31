@@ -1,2 +1,0 @@
-mlflow:
-  tracking_uri: "file:///c:/Users/Asus/Documents/MLOPS Projects/mlops-project/mlartifacts"

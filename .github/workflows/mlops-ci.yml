@@ -27,6 +27,8 @@ jobs:
           pip install -r requirements.txt   
           pip install pytest
         
+      - name: Set MLflow Tracking URI (Windows)
+        run: echo "MLFLOW_TRACKING_URI=file://c:/Users/Asus/Documents/MLOPS Projects/mlops-project/mlartifacts" | Out-File -FilePath $env:GITHUB_ENV -Append
 
       - name: Run Pytest Tests
         run: |
